@@ -112,7 +112,8 @@ public class playercontroller : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Finish")
         {
-            gamemanager.nextstage();
+            //gamemanager.nextstage();
+            movespeed = 0;
         }
         else if (collision.gameObject.tag == "slime")
         {

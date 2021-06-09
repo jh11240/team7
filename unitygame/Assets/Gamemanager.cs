@@ -15,7 +15,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void nextstage()
     {
-        if (stageindex < stages.Length - 1)
+        if (stageindex <= stages.Length - 1)
         {
             Debug.Log("wow");
             stages[stageindex].SetActive(false);
@@ -25,17 +25,15 @@ public class Gamemanager : MonoBehaviour
         }
         else
         {
-            
             Time.timeScale = 0;
             Debug.Log("게임 클리어");
-            loadscene();
+            //loadscene();
         }
         
     }
     //player 첨 등장할 위치
     void playerposition()
     {
-    
         player.transform.position = new Vector3(-4, 0, -1);
         player.velocity0();    
     }
