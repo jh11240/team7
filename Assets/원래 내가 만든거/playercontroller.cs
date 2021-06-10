@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playercontroller : MonoBehaviour
 {
+   
     private Animator animator;
     private Rigidbody2D rigid;
     private float x;
@@ -112,7 +114,7 @@ public class playercontroller : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Finish")
         {
-            //gamemanager.nextstage();
+            gamemanager.nextstage();
             movespeed = 0;
         }
         else if (collision.gameObject.tag == "slime")

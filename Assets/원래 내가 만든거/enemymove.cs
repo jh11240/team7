@@ -77,7 +77,13 @@ public class enemymove : MonoBehaviour
             ressurection();
             Invoke("ressurection", 3);
         }
+        else if (collision.gameObject.tag == "slime")
+        {
+            ressurection();
+            Invoke("ressurection", 3);
+        }
     }
+ 
 
     // Update is called once per frame
     void Update()

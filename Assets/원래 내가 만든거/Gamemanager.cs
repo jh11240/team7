@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 public class Gamemanager : MonoBehaviour
 {
     public int stageindex;
+    [SerializeField]
     public playercontroller player;
+    public Rigidbody2D rigid;
     [SerializeField]
     public GameObject[] stages;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigid = GetComponent<Rigidbody2D>();
     }
     public void nextstage()
     {
-        if (stageindex <= stages.Length - 1)
+        if (stageindex <= stages.Length - 2)
         {
             Debug.Log("wow");
             stages[stageindex].SetActive(false);
@@ -25,6 +27,7 @@ public class Gamemanager : MonoBehaviour
         }
         else
         {
+            //rigid.gravityScale = 0;
             Time.timeScale = 0;
             Debug.Log("게임 클리어");
             //loadscene();
