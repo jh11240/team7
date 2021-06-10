@@ -19,7 +19,7 @@ public class Gamemanager : MonoBehaviour
     {
         if (stageindex <= stages.Length - 2)
         {
-            Debug.Log("wow");
+            //Debug.Log("wow");
             stages[stageindex].SetActive(false);
             stageindex++;
             stages[stageindex].SetActive(true);

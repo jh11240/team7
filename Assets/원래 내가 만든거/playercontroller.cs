@@ -25,7 +25,7 @@ public class playercontroller : MonoBehaviour
     private Vector3 l_head;
     private Vector3 r_head;
 
-    BoxCollider2D capsuleCollider2D;
+    BoxCollider2D boxCollider2D;
     private Vector3 direction;
     private int i = 1;
     private int res = 0;
@@ -35,9 +35,8 @@ public class playercontroller : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        capsuleCollider2D = GetComponent<BoxCollider2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //gamemanager = GetComponent<Gamemanager>();
     }
     public void flipx()
     {
@@ -55,7 +54,7 @@ public class playercontroller : MonoBehaviour
  
     private void FixedUpdate()
     {
-        Bounds bounds = capsuleCollider2D.bounds;
+        Bounds bounds = boxCollider2D.bounds;
         r_head = new Vector3(bounds.max.x, bounds.max.y);
         l_head = new Vector3(bounds.min.x, bounds.max.y);
         foot = new Vector3(bounds.center.x, bounds.min.y);
